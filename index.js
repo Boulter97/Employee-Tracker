@@ -3,53 +3,55 @@ const consoleTable = require('console.table');
 const connection = require('./app.js');
 
 function startApp() {
-  inquirer
-    .prompt({
-      name: 'menuChoice',
-      type: 'list',
-      message: 'Please select an option:',
-      choices: [
-        'View all departments',
-        'View all roles',
-        'View all employees',
-        'Add a department',
-        'Add a role',
-        'Add an employee',
-        'Update an employee role',
-        'Exit'
-      ]
-    })
-    .then(answer => {
-      switch (answer.menuChoice) {
-        case 'View all departments':
-          viewDepartments();
-          break;
-        case 'View all roles':
-          viewRoles();
-          break;
-        case 'View all employees':
-          viewEmployees();
-          break;
-        case 'Add a department':
-          addDepartment();
-          break;
-        case 'Add a role':
-          addRole();
-          break;
-        case 'Add an employee':
-          addEmployee();
-          break;
-        case 'Update an employee role':
-          updateEmployeeRole();
-          break;
-        case 'Exit':
-          connection.end();
-          console.log('Disconnected from the database.');
-          break;
-      }
-    });
-}
-
+    const choices = [
+      'View all departments',
+      'View all roles',
+      'View all employees',
+      'Add a department',
+      'Add a role',
+      'Add an employee',
+      'Update an employee role',
+      'Exit'
+    ];
+  
+    inquirer
+      .prompt({
+        name: 'menuChoice',
+        type: 'list',
+        message: 'Please select an option:',
+        choices: choices
+      })
+      .then(answer => {
+        switch (answer.menuChoice) {
+          case 'View all departments':
+            viewDepartments();
+            break;
+          case 'View all roles':
+            viewRoles();
+            break;
+          case 'View all employees':
+            viewEmployees();
+            break;
+          case 'Add a department':
+            addDepartment();
+            break;
+          case 'Add a role':
+            addRole();
+            break;
+          case 'Add an employee':
+            addEmployee();
+            break;
+          case 'Update an employee role':
+            updateEmployeeRole();
+            break;
+          case 'Exit':
+            connection.end();
+            console.log('Disconnected from the database.');
+            break;
+        }
+      });
+  }
+  
 function viewDepartments() {
   connection.query('SELECT * FROM department', (err, departments) => {
     if (err) {
