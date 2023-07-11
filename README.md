@@ -1,11 +1,11 @@
-Note Taker
+Employee Tracker
 - 
 
 **Project Description**
 -
 This homework is to devlope an application called Employee Tracker which is command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL. Because this application won’t be deployed, i also needed  to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. 
 
--Developer notes:- 
+-Developer notes:- got it working but would like to improve functionality allot more 
  
 **User Story**
 -
@@ -37,7 +37,8 @@ This homework is to devlope an application called Employee Tracker which is comm
 
 **Deployed link & Screenshot**
 -
-- 
+- [Untitled_ Jul 11, 2023 3_58 PM.webm](https://github.com/Boulter97/Employee-Tracker/assets/118101244/b7a284be-5766-436f-8483-3ea89a4f2a2c)
+
 **References & Resources**
 -
 - https://www.google.com.au/
